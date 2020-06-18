@@ -1,9 +1,10 @@
 FROM debian:jessie
 MAINTAINER yiyiwangru "308553279@qq.com"
 
-RUN apt-get update --fix-missing && apt-get install -y python-dev libpng-dev git wget python python-pip python-virtualenv python-matplotlib
-
-RUN apt-get install -y openjdk-8-jdk
+RUN apt-get update --fix-missing && apt-get install -y python-dev libpng-dev git wget python python-pip python-virtualenv python-matplotlib python-software-properties software-properties-common
+RUN add-apt-repository ppa:webupd8team/java
+RUN apt-get update
+RUN apt-get install oracle-java8-installer
 
 RUN apt-get install -y wget
 
